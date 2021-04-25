@@ -86,24 +86,25 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.h2`
   position: absolute;
-  background: linear-gradient(
-    to bottom,
-    #f25872 0%,
-    HSL(0, 0%, 18%) 10%,
-    #ff8638 30%,
-    #f25872 100%
-  );
-  background-clip: text;
   display: inline-block;
   padding: 50px 40px;
   border-radius: 50%;
   line-height: 1;
   z-index: 1;
   text-align: center;
-  transform: translate(50%, 30%);
-  color: transparent;
+  transform: translate(40%, 20%);
+  -webkit-transform: translate(40%, 20%);
+  color: #f25872;
+  background: linear-gradient(
+    to right bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.7) 60%,
+    #ff8638 95%,
+    #f25872 100%
+  );
   border: 3px transparent solid;
   border-bottom: 3px #f25872 solid;
+  border-right: 3px #ff8638 solid;
 `;
 
 
