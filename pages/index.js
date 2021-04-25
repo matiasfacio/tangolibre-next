@@ -1,4 +1,5 @@
 import { Section, SubTitle, Title, Header } from "../styles/globalstyles";
+import Pictures from '../components/mainPageComponents/Pictures'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         </Header>
       </Section>
       <Section>
+        <Pictures/>
       </Section>
     </>
   );
