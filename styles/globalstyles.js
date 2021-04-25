@@ -80,7 +80,7 @@ export const Title = styled.h1`
   border-radius: 5px;
   line-height: 1;
   z-index: 99;
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotateZ(-10deg);
 `;
 
 export const SubTitle = styled.h2`
