@@ -1,16 +1,52 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html {
+  --background-menu-color: #232323;
+  --background-body-color: HSL(0, 0%, 18%);
+  --menu-fonts-color: #ff8638;
+  --rosa: #f25872;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Fira Sans', serif;
+  font-size: clamp(4rem, 10vw, 16rem);
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: clamp(2.8rem, 5vw, 8rem);
+  font-weight: 500;
+}
+
+button {
+  background: linear-gradient(to right, var(--menu-fonts-color), var(--rosa));
+  padding: 10px 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
 }
