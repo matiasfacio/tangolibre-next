@@ -26,6 +26,7 @@ export const Header = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px #f25872 solid;
   &:after {
     background: linear-gradient(
       to right,
@@ -188,42 +189,74 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   background-image: url(${(props) => props.theme.url});
   background-size: cover;
-  background-color: #232323;
-  background-blend-mode: screen;
   width: 200px;
-  height: 200px;
+  height: 400px;
   position: relative;
   margin-bottom: 30px;
   border: 2px #ff8638 solid;
   transition: all 500ms ease-in-out;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
+
   &:nth-of-type(1) {
-    transform: translate(-20%, 35%);
+    transform: translate(0%, 0%);
   };
   &:nth-of-type(2) {
-    transform: translateX(20%);
+    transform: translate(-20%,-10px);
   };
   &:nth-of-type(3) {
-    transform: translate(-40%, -40%);
+    transform: translate(-40%, -20px);
   };
   &:hover:nth-of-type(3) {
-    transform: translateX(30%);
+    transform: translate(-40%,-30px) rotateZ(-5deg);
+    z-index: 100;
   }
   &:hover:nth-of-type(2) {
-    transform: translateX(50%);
+    transform: translate(-20%,-30px) rotateZ(-5deg);
+    z-index: 100;
   }
   &:hover:nth-of-type(1) {
-    transform: scale(1.3);
+    transform: translate(0%,-30px) rotateZ(-5deg);
+    z-index: 100;
+  }
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    content:'';
+    transition: all 250ms ease-in-out;
+  }
+  &:hover::after {
+    background-color: rgba(0,0,0,0);
   }
 `;
 
 export const ImagesContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  height: 50%;
+`
+export const VideoContainer = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10vw;
+  border-top: 0px #f25872 dotted;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, transparent 60%, #232323 80%, transparent 100%);
+  }
 `

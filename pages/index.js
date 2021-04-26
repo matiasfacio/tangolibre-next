@@ -1,5 +1,6 @@
 import { Section, SubTitle, Title, Header } from "../styles/globalstyles";
 import Pictures from '../components/mainPageComponents/Pictures'
+import VideoSection from '../components/mainPageComponents/VideoSection'
 
 export default function Home() {
   return (
@@ -18,6 +19,11 @@ export default function Home() {
       </Section>
       <Section>
         <Pictures/>
+      </Section>
+      <Section>
+        <VideoSection/>
+      </Section>
+      <Section theme = {"address"}>
       </Section>
     </>
   );
