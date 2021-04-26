@@ -64,7 +64,7 @@ export const Header = styled.div`
 `;
 
 export const Footer = styled.footer`
-  min-height: 70vh;
+  min-height: 100vh;
   background-color: #232323;
   color: white;
   display: flex;
@@ -197,7 +197,7 @@ export const ImageContainer = styled.div`
   min-width: 200px;
   height: 400px;
   position: relative;
-  border: 2px #ff8638 solid;
+  border: 2px #f25872 solid;
   transition: all 500ms ease-in-out;
   overflow: hidden;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
