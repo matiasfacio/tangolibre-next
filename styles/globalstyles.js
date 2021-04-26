@@ -14,7 +14,7 @@ export const Section = styled.section`
     transform: translate(0%, 60%);
     color: white;
     opacity: 0.2;
-    pointer-events: none; 
+    pointer-events: none;
     text-transform: uppercase;
     writing-mode: vertical-lr;
   }
@@ -252,6 +252,35 @@ export const ImagesContainer = styled.div`
   transform: translateY(-60px);
 `;
 
+export const PromoStyle = styled.div`
+  height: 250px;
+  width: 250px;
+  background: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    transparent 50%,
+    #f25872 60%,
+    #ff8638 100%
+  );
+  border-radius: 40% 150% 60% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(20%);
+  h2 {
+    font-size: 5rem;
+    color: white;
+  }
+`;
+
+export const PicPromoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`;
+
 export const VideoContainer = styled.div`
   width: 70%;
   display: flex;
@@ -265,7 +294,7 @@ export const VideoContainer = styled.div`
 
 export const VideoDemo = styled.div`
   position: relative;
-  transform: translate(15%, 0%);
+  transform: translate(0%, 0%);
   &::after {
     position: absolute;
     content: "we love tango";
@@ -274,14 +303,15 @@ export const VideoDemo = styled.div`
     left: 0;
     font-size: 4rem;
     width: 40%;
-    height: 30%;
+    height: 25%;
     background: linear-gradient(to right, #f25872 0%, transparent 40%);
     pointer-events: none;
   }
   video {
     border: 2px #f25872 solid;
-    width: 70%;
+    width: 100%;
     height: auto;
+    border-radius: 50% 0%;
   }
 `;
 

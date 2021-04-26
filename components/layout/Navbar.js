@@ -1,4 +1,4 @@
-import { Nav } from '../../styles/globalstyles'
+import { Nav } from "../../styles/globalstyles";
 import Link from "next/link";
 
 function Navbar() {
@@ -16,5 +16,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-

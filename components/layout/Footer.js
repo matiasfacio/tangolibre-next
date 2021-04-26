@@ -3,7 +3,8 @@ import { Footer as FooterStyle } from "../../styles/globalstyles"
 function Footer() {
     return (
         <FooterStyle>
-            <h2>Footer</h2>
+            <h2>WWW</h2>
+            <h3>.matiasfacio-dev.de</h3>
         </FooterStyle>
     )
 }
