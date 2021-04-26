@@ -1,12 +1,13 @@
 import React from "react";
-import Image from "next/image";
-import { Section, VideoContainer } from "../../styles/globalstyles";
+import { Section, VideoContainer, VideoDemo } from "../../styles/globalstyles";
 
 function VideoSection() {
   return (
     <Section theme={"Video"}>
       <VideoContainer>
-        <Image src="/tango-rojo2.jpg" width="300" height="450" />
+        <VideoDemo>
+          <video src="./workshop-notitle.mp4" autoPlay muted controls/>
+        </VideoDemo>
       </VideoContainer>
     </Section>
   );

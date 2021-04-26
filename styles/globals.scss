@@ -40,6 +40,12 @@ h2 {
   font-weight: 500;
 }
 
+h3 {
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-weight: 500;
+  color:#ff8638;
+}
+
 button {
   background: linear-gradient(to right, var(--menu-fonts-color), var(--rosa));
   padding: 10px 20px;

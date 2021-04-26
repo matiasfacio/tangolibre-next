@@ -2,20 +2,22 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   min-height: 100vh;
-  padding: 30px 0;
+  width: 100vw;
+  margin: 0 auto;
   position: relative;
   &::before {
     position: absolute;
     content: "${(props) => props.theme}";
     width: 200px;
     height: 200px;
-    font-size: 15rem;
+    font-size: 8rem;
     font-weight: 800;
-    transform: translate(50%, 60%);
+    transform: translate(0%, 60%);
     color: white;
     opacity: 0.2;
     pointer-events: none;
     text-transform: uppercase;
+    writing-mode: vertical-lr;
   }
 `;
 
@@ -23,10 +25,12 @@ export const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   position: relative;
   overflow: hidden;
   border-bottom: 1px #f25872 solid;
+  margin: 60px 0;
+
   &:after {
     background: linear-gradient(
       to right,
@@ -191,46 +195,50 @@ export const ImageContainer = styled.div`
   align-items: center;
   background-image: url(${(props) => props.theme.url});
   background-size: cover;
-  width: 200px;
+  min-width: 200px;
   height: 400px;
   position: relative;
-  margin-bottom: 30px;
   border: 2px #ff8638 solid;
   transition: all 500ms ease-in-out;
   overflow: hidden;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 
   &:nth-of-type(1) {
-    transform: translate(0%, 0%);
-  };
+    transform: translate(0%, -10px);
+  }
   &:nth-of-type(2) {
-    transform: translate(-20%,-10px);
-  };
+    transform: translate(-20%, -20px);
+  }
   &:nth-of-type(3) {
-    transform: translate(-40%, -20px);
-  };
+    transform: translate(-40%, -30px);
+    transform: translate(-40%, -40px) rotateZ(-5deg);
+
+    &::after {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
   &:hover:nth-of-type(3) {
-    transform: translate(-40%,-30px) rotateZ(-5deg);
+    transform: translate(-40%, -40px) rotateZ(-5deg);
     z-index: 100;
   }
   &:hover:nth-of-type(2) {
-    transform: translate(-20%,-30px) rotateZ(-5deg);
+    transform: translate(-20%, -30px) rotateZ(-5deg);
     z-index: 100;
   }
   &:hover:nth-of-type(1) {
-    transform: translate(0%,-30px) rotateZ(-5deg);
+    transform: translate(0%, -30px) rotateZ(-5deg);
     z-index: 100;
   }
   &::after {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    content:'';
+    background-color: rgba(0, 0, 0, 0.9);
+    content: "";
     transition: all 250ms ease-in-out;
   }
   &:hover::after {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
   }
 `;
 
@@ -240,23 +248,52 @@ export const ImagesContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 50%;
-`
+  height: calc(100% - 60px);
+  padding: 0 2em;
+  transform: translateY(-60px);
+`;
+
 export const VideoContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 70%;
   display: flex;
+  margin: 0 auto;
+  height: 100vh;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding-right: 10vw;
-  border-top: 0px #f25872 dotted;
   position: relative;
-  &::after{
+`;
+
+export const VideoDemo = styled.div`
+  position: relative;
+  transform: translate(15%, 0%);
+  &::after {
     position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, transparent 0%, transparent 60%, #232323 80%, transparent 100%);
+    content: "we love tango";
+    padding-left: 20px;
+    bottom: 0;
+    left: 0;
+    font-size: 4rem;
+    width: 40%;
+    height: 30%;
+    background: linear-gradient(to right, #f25872 0%, transparent 40%);
+    pointer-events: none;
   }
-`
+  video {
+    border: 2px #f25872 solid;
+    width: 70%;
+    height: auto;
+  }
+`;
+
+export const AddressContainer = styled.div`
+  padding: 0 2em;
+  margin: 0 auto;
+  display: flex;
+  width: 50%;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+`;

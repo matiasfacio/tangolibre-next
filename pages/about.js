@@ -1,4 +1,4 @@
-import { Section, Header } from "../styles/globalstyles";
+import { Section } from "../styles/globalstyles";
 
 function about() {
   return (
