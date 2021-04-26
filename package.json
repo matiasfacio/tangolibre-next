@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build && npm run export",
+    "start": "next start",
+    "export": "out"
   },
   "dependencies": {
     "next": "10.1.3",
