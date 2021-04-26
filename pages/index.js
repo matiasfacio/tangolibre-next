@@ -36,7 +36,7 @@ export default function Home() {
       <Section>
         <VideoSection />
       </Section>
-      <Section theme={"address"} id="address">
+      <Section theme={"contact"} id="contact">
         <AddressContainer>
           <h2>Tango Libre</h2>
           <h3>c/o Bühnenreif!</h3>

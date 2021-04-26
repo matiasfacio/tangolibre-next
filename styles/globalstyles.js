@@ -143,17 +143,20 @@ export const Nav = styled.nav`
     margin-right: 30px;
     &::before {
       position: absolute;
-      width: 0%;
+      width: 100%;
       content: "";
+      left:0;
+      bottom:0;
       height: 2px;
+      background: linear-gradient(to right, #ff8638 0%, #f25872 50%);
       background-color: transparent;
-      transform: translateY(28px);
-      transition: all 180ms linear;
-      transform-origin: center cente4;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 200ms ease-in;
     }
     &:hover::before {
-      background: linear-gradient(to right, #ff8638 0%, #f25872 50%);
-      width: 100%;
+      transform: scaleX(1);
+      transform-origin: left;
     }
     &:after {
       content: "";
