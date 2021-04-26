@@ -66,7 +66,7 @@ export const Header = styled.div`
 `;
 
 export const Footer = styled.footer`
-  min-height: 100vh;
+  min-height: 30vh;
   background-color: #232323;
   color: white;
   display: flex;
@@ -145,8 +145,8 @@ export const Nav = styled.nav`
       position: absolute;
       width: 100%;
       content: "";
-      left:0;
-      bottom:0;
+      left: 0;
+      bottom: 0;
       height: 2px;
       background: linear-gradient(to right, #ff8638 0%, #f25872 50%);
       background-color: transparent;
