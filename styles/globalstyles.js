@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  min-height: 100vh;
-  width: 100vw;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   &::before {
@@ -15,7 +14,7 @@ export const Section = styled.section`
     transform: translate(0%, 60%);
     color: white;
     opacity: 0.2;
-    pointer-events: none;
+    pointer-events: none; 
     text-transform: uppercase;
     writing-mode: vertical-lr;
   }

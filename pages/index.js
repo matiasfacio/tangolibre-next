@@ -5,7 +5,7 @@ import VideoSection from "../components/mainPageComponents/VideoSection";
 export default function Home() {
   return (
     <>
-      <Section>
+      {/* <Section> */}
         <Header>
           <Title>
             Tango <br /> Libre
@@ -16,7 +16,7 @@ export default function Home() {
             yourself <br /> away
           </SubTitle>
         </Header>
-      </Section>
+      {/* </Section> */}
       <Section>
         <Pictures />
       </Section>
