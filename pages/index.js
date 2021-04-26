@@ -9,6 +9,7 @@ import {
 import Pictures from "../components/mainPageComponents/Pictures";
 import VideoSection from "../components/mainPageComponents/VideoSection";
 import Promo from "../components/mainPageComponents/Promo";
+import Newsletter from "../components/mainPageComponents/Newsletter"
 
 export default function Home() {
   return (
@@ -28,6 +29,9 @@ export default function Home() {
           <Pictures />
           <Promo />
         </PicPromoContainer>
+      </Section>
+      <Section>
+        <Newsletter/>
       </Section>
       <Section>
         <VideoSection />

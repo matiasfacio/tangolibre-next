@@ -8,6 +8,8 @@ export const Section = styled.section`
     position: absolute;
     content: "${(props) => props.theme}";
     width: 200px;
+    top: 0;
+    right: 0;
     height: 200px;
     font-size: 8rem;
     font-weight: 800;
@@ -122,7 +124,7 @@ export const Nav = styled.nav`
     #ff8638 98%,
     #f25872 100%
   );
-  /* background-color: #232323; */
+
   color: #ff8638;
   height: 60px;
   display: flex;
@@ -181,11 +183,15 @@ export const Form = styled.form`
 `;
 
 export const FormContainer = styled.div`
+  padding: 100px 0;
   width: 100%;
-  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  h3 {
+    margin-bottom: 20px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -255,13 +261,13 @@ export const ImagesContainer = styled.div`
 export const PromoStyle = styled.div`
   height: 250px;
   width: 250px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom right,
     transparent 0%,
     transparent 50%,
     #f25872 60%,
     #ff8638 100%
-  );
+  ); */
   border-radius: 40% 150% 60% 10%;
   display: flex;
   justify-content: center;
@@ -325,4 +331,14 @@ export const AddressContainer = styled.div`
   justify-content: center;
   align-items: center;
   text-align: left;
+`;
+
+export const NewsletterContainer = styled.div`
+  min-height: 300px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #232324;
 `;

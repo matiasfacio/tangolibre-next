@@ -41,7 +41,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(2rem, 3vw, 4rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   font-weight: 500;
   color: #ff8638;
 }
