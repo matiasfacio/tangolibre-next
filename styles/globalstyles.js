@@ -186,8 +186,7 @@ export const Form = styled.form`
 `;
 
 export const FormContainer = styled.div`
-  padding: 100px 0;
-  width: 100%;
+  padding: 0px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -324,6 +323,12 @@ export const VideoDemo = styled.div`
   }
 `;
 
+export const VideoButtonConatiner = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+
 export const AddressContainer = styled.div`
   padding: 0 2em;
   margin: 0 auto;
@@ -345,3 +350,65 @@ export const NewsletterContainer = styled.div`
   flex-direction: column;
   background-color: #232324;
 `;
+
+export const AboutContainer = styled.div`
+  padding-top: 100px;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    font-size: 2rem;
+    padding: 5px;
+  }
+`;
+
+export const UserAreaContainer = styled.div`
+  padding: 100px 2em;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  /* overflow-x: hidden; */
+  h2 {
+    font-size: 3rem;
+  }
+`
+
+export const UserInfo = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    font-size: 1.5rem;
+    color: white;
+  }
+`
+
+export const AdminAreaContainer = styled(UserAreaContainer)`
+  
+`;
+
+export const SubscriptionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  h2 {
+    padding-bottom: 10px;
+  }
+  p {
+    font-size: 1.5rem;
+    color: #ff8638;
+  }
+`
+
+export const ProgramContainer = styled.div`
+  padding-top: 100px;
+  padding-bottom: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #232324;
+`

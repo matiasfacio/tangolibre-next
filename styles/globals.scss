@@ -4,6 +4,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 62.5%;
   overflow-x: hidden;
+  background-color: #232323;
 }
 
 html {
@@ -45,6 +46,7 @@ h3 {
   font-weight: 500;
   color: #ff8638;
 }
+
 
 button {
   background: linear-gradient(to right, var(--menu-fonts-color), var(--rosa));

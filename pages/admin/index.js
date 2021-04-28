@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Section, Form, FormContainer } from "../../styles/globalstyles";
-import styled from "styled-components";
+import { Section, Form, FormContainer, AdminAreaContainer } from "../../styles/globalstyles";
+
 
 function index() {
   const [login, setLogin] = useState({
@@ -18,6 +18,7 @@ function index() {
 
   return (
     <Section theme={"ADMINAREA"}>
+      <AdminAreaContainer>
       <FormContainer>
         <Form
           onSubmit={(e) => {
@@ -51,6 +52,7 @@ function index() {
           <button type="submit">Login</button>
         </Form>
       </FormContainer>
+      </AdminAreaContainer>
     </Section>
   );
 }
