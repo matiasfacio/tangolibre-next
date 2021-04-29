@@ -9,11 +9,11 @@ export default function login() {
     {!session && <>
       <p>Not signed in </p><br/>
       <p>A the moment, we only support Google OAuth Authentication</p>
-      <button onClick={() => signIn()}>Sign in</button>
+      <button onClick={() => signIn('google', { callbackUrl: process.env.NEXT_PUBLIC_CALLBACK_URL })}>Sign in</button>
     </>}
     {session && <>
       <p>Signed in as {session.user.email}</p> <br/>
-      <button onClick={() => signOut()}>Sign out</button>
+      <button onClick={() => signOut('google', { callbackUrl: process.env.NEXT_PUBLIC_CALLBACK_URL })}>Sign out</button>
     </>}
     </AboutContainer>
   </Section>
