@@ -1,18 +1,16 @@
 import { useEffect } from "react";
 import { Section, UserAreaContainer } from "../../styles/globalstyles";
 import UserArea from "../../components/userComponents/UserArea";
-import { useSession } from "next-auth/client";
+import { useUser } from "@auth0/nextjs-auth0";
 
 function userarea() {
-  const [session] = useSession();
-  useEffect(() => {
-    console.log(session);
-  });
+  const { user, isLoading, error } = useUser();
+ 
   return (
     <Section theme={"userarea"}>
       <UserAreaContainer>
-      {session && <UserArea />}
-      {!session && <h2>You must login to access this area</h2>}
+        {user && <UserArea />}
+        {!user && <h2>You must login to access this area</h2>}
       </UserAreaContainer>
     </Section>
   );

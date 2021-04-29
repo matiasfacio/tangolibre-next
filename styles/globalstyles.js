@@ -412,3 +412,10 @@ export const ProgramContainer = styled.div`
   flex-wrap: wrap;
   background-color: #232324;
 `
+
+export const AuthContainer = styled.div`
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`

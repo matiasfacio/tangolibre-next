@@ -1,18 +1,20 @@
 import { Nav } from "../../styles/globalstyles";
 import Link from "next/link";
-import { useSession } from "next-auth/client";
+import { useUser } from "@auth0/nextjs-auth0";
+
 
 function Navbar() {
-  const [ session ] = useSession();
+  
+  const { user, error, isLoading } = useUser();
 
   return (
     <Nav>
       <ul>
         <Link href="/">Home</Link>
         <Link href="/kursprogramm">Kursprogramm</Link>
-        <Link href="/login">{!session ? 'Login':'Logout'}</Link>
-        {session && <Link href="/user/userarea">User Area</Link>}
-        {session?.user.email === "matiaspersonal@gmail.com" && <Link href="/admin/">Admin Area</Link>}
+        <Link href="/loginuser">{!user ? 'Login':'Logout'}</Link>
+        {user && <Link href="/user/userarea">User Area</Link>}
+        {user?.email === "matiaspersonal@gmail.com" && <Link href="/admin/">Admin Area</Link>} 
       </ul>
     </Nav>
   );
