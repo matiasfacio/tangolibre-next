@@ -390,7 +390,7 @@ export const UserInfo = styled.div`
 `
 
 export const AdminAreaContainer = styled(UserAreaContainer)`
-  
+  min-height: 100vh;
 `;
 
 export const SubscriptionContainer = styled.div`
