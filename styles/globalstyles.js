@@ -339,7 +339,7 @@ export const AddressContainer = styled.div`
   justify-content: center;
   align-items: center;
   text-align: left;
-  background-color: #232324;
+  /* background-color: #232324; */
 `;
 
 export const NewsletterContainer = styled.div`

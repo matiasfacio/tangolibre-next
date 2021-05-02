@@ -15,7 +15,7 @@ function Navbar() {
         <Link href="/blog">Blog</Link>
         <Link href="/loginuser">{!user ? 'Login':'Logout'}</Link>
         {user && <Link href="/user/userarea">User Area</Link>}
-        {user?.email === process.env.ADMIN_EMAIL && <Link href="/admin/">Admin Area</Link>} 
+        {user?.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL && <Link href="/admin/">Admin Area</Link>} 
       </ul>
     </Nav>
   );
