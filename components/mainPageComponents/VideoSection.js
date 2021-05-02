@@ -5,6 +5,7 @@ import {
   VideoDemo,
   VideoButtonConatiner,
 } from "../../styles/globalstyles";
+import ReactPlayer from "react-player/lazy";
 
 function VideoSection() {
   const [videoUrl, setVideoUrl] = useState("./workshop-notitle.mp4");
@@ -21,7 +22,12 @@ function VideoSection() {
           </button>
         </VideoButtonConatiner>
         <VideoDemo>
-          {videoUrl && <video src={videoUrl} muted controls />}
+          <ReactPlayer
+            url={videoUrl}
+            width="100%"
+            height="100%"
+            controls
+          />
         </VideoDemo>
       </VideoContainer>
     </Section>
