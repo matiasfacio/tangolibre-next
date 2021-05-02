@@ -20,8 +20,5 @@
   },
   "devDependencies": {
     "netlify-plugin-cache-nextjs": "^1.6.1"
-  },
-  "browser": {
-    "crypto": false
   }
 }
