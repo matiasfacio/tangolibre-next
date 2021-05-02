@@ -333,12 +333,13 @@ export const AddressContainer = styled.div`
   padding: 0 2em;
   margin: 0 auto;
   display: flex;
-  width: 50%;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 50vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: left;
+  background-color: #232324;
 `;
 
 export const NewsletterContainer = styled.div`
@@ -417,5 +418,14 @@ export const AuthContainer = styled.div`
   padding-top: 100px;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+`
+
+export const BlogContainer = styled.div`
+  padding: 100px 2em;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
 `

@@ -11,7 +11,8 @@ function Navbar() {
     <Nav>
       <ul>
         <Link href="/">Home</Link>
-        <Link href="/kursprogramm">Kursprogramm</Link>
+        <Link href="/kursprogramm">Program</Link>
+        <Link href="/blog">Blog</Link>
         <Link href="/loginuser">{!user ? 'Login':'Logout'}</Link>
         {user && <Link href="/user/userarea">User Area</Link>}
         {user?.email === "matiaspersonal@gmail.com" && <Link href="/admin/">Admin Area</Link>} 
