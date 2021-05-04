@@ -4,11 +4,31 @@ import { BSON } from "bson";
 import { Title, Snippets } from "../blog";
 import styled from "styled-components";
 
+export async function getStaticPaths() {
+  const { db } = await connectToDatabase();
+  const posts = await db
+    .collection("blogs")
+    .find({})
+    .sort({ metacritic: -1 })
+    .toArray();
+
+  const paths = posts.map((post) => ({
+    params: {
+      postId: post._id.toString(),
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
 export async function getStaticProps({ params }) {
   const { db } = await connectToDatabase();
   const { postId } = params;
 
-  console.log(postId);
+  // console.log(postId);
   const post = await db
     .collection("blogs")
     .findOne({ _id: new BSON.ObjectId(postId) });
@@ -21,44 +41,17 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
-  const { db } = await connectToDatabase();
-  const posts = await db
-    .collection("blogs")
-    .find({})
-    .sort({ metacritic: -1 })
-    .toArray();
-
-  const postids = posts.map(post => post._id)
-  console.log('###############')
-  console.log('posts:',postids)
-  console.log('###############')
-
-  const paths = posts.map((post) => ({
-    params: {
-      postId: post._id.toString(),
-    },
-  }));
-
-  console.log("#####################");
-  console.log(paths);
-  console.log("#####################");
-
-  return {
-    paths,
-    fallback: true,
-  };
-}
-
-const Post = (
-  { post } = { title: "title", snippet: "snippet", body: "body" }
-) => {
+const Post = ({ post }) => {
   return (
     <Section>
       <PostContainer>
-        <Title>{post?.title}</Title>
-        <Snippets>{post?.snippet}</Snippets>
-        <FullBody>{post?.body}</FullBody>
+        {post && (
+          <>
+            <Title>{post?.title}</Title>
+            <Snippets>{post?.snippet}</Snippets>
+            <FullBody>{post?.body}</FullBody>
+          </>
+        )}
       </PostContainer>
     </Section>
   );
