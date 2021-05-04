@@ -17,7 +17,7 @@ function blog({ posts }) {
               </Title>
               <Snippets>{post.snippet}</Snippets>
               <Body>{post.body}</Body>
-              <StyledLink href={`/blog/${post._id}`}>Read More</StyledLink>
+              <Link href={`/blog/${post._id}`}><button>Read More</button></Link>
             </div>
           );
         })}
@@ -75,11 +75,3 @@ export const Body = styled.div`
   max-height: 200px;
   line-height: 1.8em;
 `;
-
-export const StyledLink = styled(Link)`
-  text-align: right;
-  background-color: #232324;
-  &:hover {
-    background-color: #f25872;
-  }
-`
