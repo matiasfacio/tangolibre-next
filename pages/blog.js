@@ -17,8 +17,7 @@ function blog({ posts }) {
               </Title>
               <Snippets>{post.snippet}</Snippets>
               <Body>{post.body}</Body>
-              {/* <Link href={`/post/${post._id}`}><button>Read More</button></Link> */}
-              <Link href="/post/[postId]" as={`/post/${post._id}`}><button>Read More</button></Link>
+              <button><Link href="/post/[postId]" as={`/post/${post._id}`}>Read More</Link></button>
             </div>
           );
         })}
