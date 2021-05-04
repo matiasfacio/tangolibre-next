@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { connectToDatabase, ObjectID } from "../../util/mongodb";
+import { connectToDatabase } from "../../util/mongodb";
 import { Section, PostContainer } from "../../styles/globalstyles";
 
 export async function getServerSideProps(context) {
@@ -7,8 +7,8 @@ export async function getServerSideProps(context) {
   const { postId } = context.query;
 
 
-  const post = await db.collection("blogs").find({_id:ObjectID(postId)});
-  console.log(post)
+//   const post = await db.collection("blogs").find({_id:ObjectID(postId)});
+//   console.log(post)
 
   return {
     props: {
