@@ -12,8 +12,9 @@ export async function getStaticProps({ params }) {
     .collection("blogs")
     .findOne({ _id: new BSON.ObjectId(postId) });
 
-  console.log("params", params);
+ 
   return {
+    revalidate: 1,
     props: {
       post: JSON.parse(JSON.stringify(post)),
     },
@@ -28,16 +29,12 @@ export async function getStaticPaths() {
     .sort({ metacritic: -1 })
     .toArray();
 
-  console.log("post coming from get static paths:", posts);
-
   const paths = posts.map((post) => ({
     params: {
       postId: toString(post._id),
     }
   }));
-  console.log('##################################')
-  console.log('PATHS:', paths)
-  console.log("about to return from get static paths");
+ 
   return {
     paths,
     fallback: true,
