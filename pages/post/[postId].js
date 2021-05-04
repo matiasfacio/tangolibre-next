@@ -17,9 +17,12 @@ export async function getStaticPaths() {
   })
 
   return {
-    paths,
-    fallback: false,
+    paths: [],
+    fallback: true,
   }
+
+
+  // * :::::another wayo of passing the paths::::
   // const paths = posts.map((post) => ({
   //   params: {
   //     postId: post._id.toString(),
@@ -35,10 +38,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { db } = await connectToDatabase();
   const { postId } = params;
-  console.log(params.postId)
-
-  // console.log(new BSON.ObjectId(postId))
-  // console.log(postId)
 
   const post = await db
     .collection("blogs")
