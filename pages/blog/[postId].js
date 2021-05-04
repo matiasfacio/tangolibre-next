@@ -28,15 +28,16 @@ export async function getStaticProps({ params }) {
   const { db } = await connectToDatabase();
   const { postId } = params;
 
-  // console.log(postId);
   const post = await db
     .collection("blogs")
     .findOne({ _id: new BSON.ObjectId(postId) });
 
+  const data = await JSON.parse(JSON.stringify(post))
+
   return {
     revalidate: 1,
     props: {
-      post: JSON.parse(JSON.stringify(post)),
+      post: data,
     },
   };
 }
