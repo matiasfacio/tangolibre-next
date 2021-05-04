@@ -429,3 +429,9 @@ export const BlogContainer = styled.div`
   justify-content: center;
   flex-direction: column;
 `
+
+export const PostContainer = styled.div`
+  padding: 100px 2em;
+  margin-bottom: 100px;
+  background-color: #232324;
+`

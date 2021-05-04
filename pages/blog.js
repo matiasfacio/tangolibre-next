@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Section, BlogContainer } from "../styles/globalstyles";
 import { connectToDatabase } from "../util/mongodb";
 import styled from "styled-components";
@@ -9,13 +10,16 @@ function blog({ posts }) {
       <BlogContainer>
         <h2>Blog</h2>
         {posts?.map((post, index) => {
-          return <div key={post._id}>
-            <Title>
-              {index + 1}) {post.title}
-            </Title>
-            <Snippets>{post.snippet}</Snippets>
-            <Body>{post.body}</Body>
-          </div>;
+          return (
+            <div key={post._id}>
+              <Title>
+                {index + 1}) {post.title}
+              </Title>
+              <Snippets>{post.snippet}</Snippets>
+              <Body>{post.body}</Body>
+              <StyledLink href={`/blog/${post._id}`}>Read More</StyledLink>
+            </div>
+          );
         })}
       </BlogContainer>
     </Section>
@@ -28,17 +32,17 @@ export async function getStaticProps() {
   const { db } = await connectToDatabase();
 
   const posts = await db
-
     .collection("blogs")
-
     .find({})
-
     .sort({ metacritic: -1 })
-
     .limit(30)
-
     .toArray();
 
+   const post = await db
+   .collection("blogs")
+   .findOne({_id: posts[0]._id})
+
+   console.log('typeof post._id', post._id)
   return {
     props: {
       posts: JSON.parse(JSON.stringify(posts)),
@@ -64,4 +68,18 @@ export const Body = styled.div`
   font-size: 1.6rem;
   white-space: pre-wrap;
   background-color: #232324;
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 200px;
+  line-height: 1.8em;
 `;
+
+export const StyledLink = styled(Link)`
+  text-align: right;
+  background-color: #232324;
+  &:hover {
+    background-color: #f25872;
+  }
+`
