@@ -5,22 +5,22 @@ import { Title, Snippets } from "../blog";
 import styled from "styled-components";
 
 export async function getStaticPaths() {
-  const { db } = await connectToDatabase();
-  const posts = await db
-    .collection("blogs")
-    .find({})
-    .sort({ metacritic: -1 })
-    .toArray();
+  // const { db } = await connectToDatabase();
+  // const posts = await db
+  //   .collection("blogs")
+  //   .find({})
+  //   .sort({ metacritic: -1 })
+  //   .toArray();
 
-  const paths = posts.map((post) => ({
-    params: {
-      postId: post._id.toString(),
-    },
-  }));
+  // const paths = posts.map((post) => ({
+  //   params: {
+  //     postId: post._id.toString(),
+  //   },
+  // }));
 
   return {
-    paths,
-    fallback: false,
+    paths: [{params: {postId: "601a46d609861b0e409a35fa"}}],
+    fallback: true,
   };
 }
 
@@ -33,7 +33,7 @@ export async function getStaticProps({ params }) {
 
   const post = await db
     .collection("blogs")
-    .findOne({ _id: postId });
+    .findOne({ _id: new BSON.ObjectId(postId) });
 
   const data = await JSON.parse(JSON.stringify(post))
 
