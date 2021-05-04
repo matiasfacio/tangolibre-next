@@ -3,10 +3,10 @@ import Link from "next/link";
 import { Section, BlogContainer } from "../styles/globalstyles";
 import { connectToDatabase } from "../util/mongodb";
 import styled from "styled-components";
-import {useRouter} from 'next/router'
+
 
 function blog({ posts }) {
-  const router = useRouter()
+ 
   return (
     <Section>
       <BlogContainer>
@@ -19,8 +19,7 @@ function blog({ posts }) {
               </Title>
               <Snippets>{post.snippet}</Snippets>
               <Body>{post.body}</Body>
-              <button onClick = {()=> router.push(`/post/${post._id}`)}>Read More</button>
-              {/* <button><Link href="/post/[postId]" as={`/post/${post._id}`}>Read More</Link></button> */}
+              <button><Link href="/post/[postId]" as={`/post/${post._id}`}>Read More</Link></button>
             </div>
           );
         })}

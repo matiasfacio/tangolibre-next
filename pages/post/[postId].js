@@ -28,9 +28,12 @@ export async function getStaticProps({ params }) {
   const { db } = await connectToDatabase();
   const { postId } = params;
 
+  console.log(new BSON.ObjectId(postId))
+  console.log(postId)
+
   const post = await db
     .collection("blogs")
-    .findOne({ _id: new BSON.ObjectId(postId) });
+    .findOne({ _id: postId });
 
   const data = await JSON.parse(JSON.stringify(post))
 
