@@ -1,19 +1,18 @@
-import { useRouter } from "next/router";
 import { connectToDatabase } from "../../util/mongodb";
 import { Section, PostContainer } from "../../styles/globalstyles";
 import { BSON } from "bson";
-import { Title, Snippets, Body } from "../blog";
+import { Title, Snippets } from "../blog";
 import styled from "styled-components";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps({ params }) {
   const { db } = await connectToDatabase();
-  const { postId } = context.query;
+  const { postId } = params;
 
   const post = await db
     .collection("blogs")
     .findOne({ _id: new BSON.ObjectId(postId) });
-  console.log(post);
 
+  console.log("params", params);
   return {
     props: {
       post: JSON.parse(JSON.stringify(post)),
@@ -21,9 +20,31 @@ export async function getServerSideProps(context) {
   };
 }
 
+export async function getStaticPaths() {
+  const { db } = await connectToDatabase();
+  const posts = await db
+    .collection("blogs")
+    .find({})
+    .sort({ metacritic: -1 })
+    .toArray();
+
+  console.log("post coming from get static paths:", posts);
+
+  const paths = posts.map((post) => ({
+    params: {
+      postId: toString(post._id),
+    }
+  }));
+  console.log('##################################')
+  console.log('PATHS:', paths)
+  console.log("about to return from get static paths");
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
 const Post = ({ post }) => {
-  const router = useRouter();
-  const { postId } = router.query;
   return (
     <Section>
       <PostContainer>
