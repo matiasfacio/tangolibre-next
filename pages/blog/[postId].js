@@ -8,11 +8,11 @@ export async function getStaticProps({ params }) {
   const { db } = await connectToDatabase();
   const { postId } = params;
 
+  console.log(postId);
   const post = await db
     .collection("blogs")
     .findOne({ _id: new BSON.ObjectId(postId) });
 
- 
   return {
     revalidate: 1,
     props: {
@@ -29,19 +29,30 @@ export async function getStaticPaths() {
     .sort({ metacritic: -1 })
     .toArray();
 
+  const postids = posts.map(post => post._id)
+  console.log('###############')
+  console.log('posts:',postids)
+  console.log('###############')
+
   const paths = posts.map((post) => ({
     params: {
-      postId: toString(post._id),
-    }
+      postId: post._id.toString(),
+    },
   }));
- 
+
+  console.log("#####################");
+  console.log(paths);
+  console.log("#####################");
+
   return {
     paths,
     fallback: true,
   };
 }
 
-const Post = ({ post } = {title: 'title', snippet: 'snippet', body: 'body'}) => {
+const Post = (
+  { post } = { title: "title", snippet: "snippet", body: "body" }
+) => {
   return (
     <Section>
       <PostContainer>
