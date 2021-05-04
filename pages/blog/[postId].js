@@ -37,11 +37,11 @@ export async function getStaticPaths() {
  
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
-const Post = ({ post }) => {
+const Post = ({ post } = {title: 'title', snippet: 'snippet', body: 'body'}) => {
   return (
     <Section>
       <PostContainer>
