@@ -23,6 +23,7 @@
     "typeorm": "^0.2.32"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^3.2.2",
     "netlify-plugin-cache-nextjs": "^1.6.1"
   }
 }
