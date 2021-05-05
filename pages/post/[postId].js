@@ -12,9 +12,10 @@ export async function getStaticPaths() {
     .sort({ metacritic: -1 })
     .toArray();
 
-  let paths = posts.map(post => {
-    return `/post/${post._id}`
-  })
+    // * :::::: it is also possible to pass the paths in this way, without the object with the params key in it for each path ---> 
+  // let paths = posts.map(post => {
+  //   return `/post/${post._id}`
+  // })
 
   return {
     paths: [],
