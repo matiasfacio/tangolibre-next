@@ -42,6 +42,7 @@ export default function Home() {
           <h3>c/o Bühnenreif!</h3>
           <h3>Immanuelkirchstrasse 6</h3>
           <h3>10405 Berlin</h3>
+          <h3>Tel: 0177 3 123 608</h3>
         </AddressContainer>
       </Section>
     </>

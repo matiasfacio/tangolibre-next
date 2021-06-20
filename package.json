@@ -6,7 +6,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start -p $PORT"
   },
@@ -23,7 +23,8 @@
     "react-player": "^2.9.0",
     "saslprep": "^1.0.3",
     "styled-components": "^5.2.3",
-    "typeorm": "^0.2.32"
+    "typeorm": "^0.2.32",
+    "postcss": ">=8.2.10"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^3.2.2",
