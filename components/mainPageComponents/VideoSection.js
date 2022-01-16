@@ -3,8 +3,9 @@ import {
   Section,
   VideoContainer,
   VideoDemo,
-  VideoButtonConatiner,
+  VideoButtonContainer,
 } from "../../styles/globalstyles";
+import { Button } from "../elements/Button";
 import ReactPlayer from "react-player/lazy";
 
 function VideoSection() {
@@ -13,22 +14,17 @@ function VideoSection() {
   return (
     <Section theme={"Video"}>
       <VideoContainer>
-        <VideoButtonConatiner>
-          <button onClick={() => setVideoUrl("./workshop-notitle.mp4")}>
-            First Video
-          </button>
-          <button onClick={() => setVideoUrl("./studio-tango.mp4")}>
-            Second Video
-          </button>
-        </VideoButtonConatiner>
         <VideoDemo>
-          <ReactPlayer
-            url={videoUrl}
-            width="100%"
-            height="100%"
-            controls
-          />
+          <ReactPlayer url={videoUrl} width="100%" height="100%" controls />
         </VideoDemo>
+        <VideoButtonContainer>
+          <Button onClick={() => setVideoUrl("./workshop-notitle.mp4")}>
+            First demo video
+          </Button>
+          <Button onClick={() => setVideoUrl("./studio-tango.mp4")}>
+            Second demo Video
+          </Button>
+        </VideoButtonContainer>
       </VideoContainer>
     </Section>
   );

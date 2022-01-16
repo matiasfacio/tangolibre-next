@@ -4,12 +4,12 @@ import {
   Title,
   Header,
   AddressContainer,
-  PicPromoContainer
+  PicPromoContainer,
 } from "../styles/globalstyles";
 import Pictures from "../components/mainPageComponents/Pictures";
 import VideoSection from "../components/mainPageComponents/VideoSection";
 import Promo from "../components/mainPageComponents/Promo";
-import Newsletter from "../components/mainPageComponents/Newsletter"
+import Newsletter from "../components/mainPageComponents/Newsletter";
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
         </PicPromoContainer>
       </Section>
       <Section>
-        <Newsletter/>
+        <Newsletter />
       </Section>
       <Section>
         <VideoSection />

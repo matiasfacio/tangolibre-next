@@ -3,10 +3,9 @@ import Link from "next/link";
 import { Section, BlogContainer } from "../styles/globalstyles";
 import { connectToDatabase } from "../util/mongodb";
 import styled from "styled-components";
-
+import { Button } from "../components/elements/Button";
 
 function blog({ posts }) {
- 
   return (
     <Section>
       <BlogContainer>
@@ -19,7 +18,11 @@ function blog({ posts }) {
               </Title>
               <Snippets>{post.snippet}</Snippets>
               <Body>{post.body}</Body>
-              <button><Link href="/post/[postId]" as={`/post/${post._id}`}><a>Read More</a></Link></button>
+              <Button>
+                <Link href="/post/[postId]" as={`/post/${post._id}`}>
+                  <a>Read More</a>
+                </Link>
+              </Button>
             </div>
           );
         })}
@@ -40,11 +43,9 @@ export async function getStaticProps() {
     .limit(30)
     .toArray();
 
-   const post = await db
-   .collection("blogs")
-   .findOne({_id: posts[0]._id})
+  const post = await db.collection("blogs").findOne({ _id: posts[0]._id });
 
-   console.log('typeof post._id', post._id)
+  console.log("typeof post._id", post._id);
   return {
     props: {
       posts: JSON.parse(JSON.stringify(posts)),

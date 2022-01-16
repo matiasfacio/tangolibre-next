@@ -9,7 +9,7 @@ export const Section = styled.section`
     content: "${(props) => props.theme}";
     width: 200px;
     top: 0;
-    right: 0;
+    right: -30px;
     height: 200px;
     font-size: 8rem;
     font-weight: 800;
@@ -36,9 +36,9 @@ export const Header = styled.div`
     background: linear-gradient(
       to right,
       transparent 0%,
-      #f25872 50%,
-      #232323 50%,
-      #232323 100%
+      var(--rosa) 50%,
+      var(--background-menu-color) 50%,
+      var(--background-menu-color) 100%
     );
     opacity: 0.2;
     position: absolute;
@@ -67,7 +67,7 @@ export const Header = styled.div`
 
 export const Footer = styled.footer`
   min-height: 30vh;
-  background-color: #232323;
+  background-color: var(--background-menu-color);
   color: white;
   display: flex;
   justify-content: center;
@@ -86,6 +86,7 @@ export const Title = styled.h1`
   border-radius: 5px;
   line-height: 1;
   z-index: 99;
+  transform-origin: top left;
   transform: translateX(-50%) rotateZ(-10deg);
 `;
 
@@ -108,8 +109,8 @@ export const SubTitle = styled.h2`
     #f25872 100%
   );
   border: 3px transparent solid;
-  border-bottom: 3px #f25872 solid;
-  border-right: 3px #ff8638 solid;
+  border-bottom: 3px var(--rosa) solid;
+  border-right: 3px var(--menu-fonts-color) solid;
 `;
 
 export const Nav = styled.nav`
@@ -119,10 +120,10 @@ export const Nav = styled.nav`
   z-index: 100;
   background: linear-gradient(
     to right,
-    #232323 0%,
-    #232323 80%,
-    #ff8638 98%,
-    #f25872 100%
+    var(--background-menu-color) 0%,
+    var(--background-menu-color) 80%,
+    var(--menu-fonts-color) 98%,
+    var(--rosa) 100%
   );
 
   color: #ff8638;
@@ -131,7 +132,7 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 0 20px;
   width: 100%;
-  border-bottom: 1px #f25872 solid;
+  border-bottom: 1px var(--rosa) solid;
   ul {
     display: flex;
     justify-content: center;
@@ -141,6 +142,7 @@ export const Nav = styled.nav`
     position: relative;
     text-transform: uppercase;
     margin-right: 30px;
+    padding: 3px 0;
     &::before {
       position: absolute;
       width: 100%;
@@ -148,7 +150,11 @@ export const Nav = styled.nav`
       left: 0;
       bottom: 0;
       height: 2px;
-      background: linear-gradient(to right, #ff8638 0%, #f25872 50%);
+      background: linear-gradient(
+        to right,
+        var(--menu-fonts-color) 0%,
+        var(--rosa) 50%
+      );
       background-color: transparent;
       transform-origin: right;
       transform: scaleX(0);
@@ -175,7 +181,7 @@ export const Form = styled.form`
   width: 300px;
   label {
     font-size: 2rem;
-    color: #ff8638;
+    color: var(--menu-fonts-color);
     margin-bottom: 5px;
   }
   input {
@@ -205,7 +211,7 @@ export const ImageContainer = styled.div`
   min-width: 200px;
   height: 400px;
   position: relative;
-  border: 2px #f25872 solid;
+  border: 2px var(--rosa) solid;
   transition: all 500ms ease-in-out;
   overflow: hidden;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
@@ -220,12 +226,12 @@ export const ImageContainer = styled.div`
     transform: translate(-40%, -30px);
     transform: translate(-40%, -40px) rotateZ(-5deg);
 
-    &::after {
+    ::after {
       background-color: rgba(0, 0, 0, 0);
     }
   }
   &:hover:nth-of-type(3) {
-    transform: translate(-40%, -40px) rotateZ(-5deg);
+    transform: perspective(2px) translate(-40%, -40px) rotateZ(-5deg);
     z-index: 100;
   }
   &:hover:nth-of-type(2) {
@@ -236,7 +242,7 @@ export const ImageContainer = styled.div`
     transform: translate(0%, -30px) rotateZ(-5deg);
     z-index: 100;
   }
-  &::after {
+  ::after {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -263,13 +269,6 @@ export const ImagesContainer = styled.div`
 export const PromoStyle = styled.div`
   height: 250px;
   width: 250px;
-  /* background: linear-gradient(
-    to bottom right,
-    transparent 0%,
-    transparent 50%,
-    #f25872 60%,
-    #ff8638 100%
-  ); */
   border-radius: 40% 150% 60% 10%;
   display: flex;
   justify-content: center;
@@ -294,7 +293,7 @@ export const VideoContainer = styled.div`
   display: flex;
   margin: 0 auto;
   height: 100vh;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -312,7 +311,7 @@ export const VideoDemo = styled.div`
     font-size: 4rem;
     width: 40%;
     height: 25%;
-    background: linear-gradient(to right, #f25872 0%, transparent 40%);
+    background: linear-gradient(to right, var(--rosa) 0%, transparent 40%);
     pointer-events: none;
   }
   video {
@@ -320,14 +319,20 @@ export const VideoDemo = styled.div`
     width: 100%;
     height: auto;
     border-radius: 50% 0%;
+    :hover {
+      border-color: var(--menu-fonts-color);
+    }
   }
 `;
 
-export const VideoButtonConatiner = styled.div`
+export const VideoButtonContainer = styled.div`
   display: flex;
-  flex-direction: column;
-`
-
+  flex-direction: row;
+  button {
+    margin-top: 10px;
+    margin-right: 30px;
+  }
+`;
 
 export const AddressContainer = styled.div`
   padding: 0 2em;
@@ -339,7 +344,6 @@ export const AddressContainer = styled.div`
   justify-content: center;
   align-items: center;
   text-align: left;
-  /* background-color: #232324; */
 `;
 
 export const NewsletterContainer = styled.div`
@@ -349,7 +353,7 @@ export const NewsletterContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #232324;
+  background-color: var(--darker-gray);
 `;
 
 export const AboutContainer = styled.div`
@@ -374,21 +378,20 @@ export const UserAreaContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
-  /* overflow-x: hidden; */
   h2 {
     font-size: 3rem;
   }
-`
+`;
 
 export const UserInfo = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   p {
     font-size: 1.5rem;
     color: white;
   }
-`
+`;
 
 export const AdminAreaContainer = styled(UserAreaContainer)`
   min-height: 100vh;
@@ -404,22 +407,22 @@ export const SubscriptionContainer = styled.div`
     font-size: 1.5rem;
     color: #ff8638;
   }
-`
+`;
 
 export const ProgramContainer = styled.div`
   padding-top: 100px;
   padding-bottom: 300px;
   display: flex;
   flex-wrap: wrap;
-  background-color: #232324;
-`
+  background-color: var(--darker-gray);
+`;
 
 export const AuthContainer = styled.div`
   padding-top: 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const BlogContainer = styled.div`
   padding: 100px 2em;
@@ -428,10 +431,10 @@ export const BlogContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-`
+`;
 
 export const PostContainer = styled.div`
   padding: 100px 2em;
   margin-bottom: 100px;
-  background-color: #232324;
-`
+  background-color: var(--darker-gray);
+`;

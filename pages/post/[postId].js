@@ -12,28 +12,10 @@ export async function getStaticPaths() {
     .sort({ metacritic: -1 })
     .toArray();
 
-    // * :::::: it is also possible to pass the paths in this way, without the object with the params key in it for each path ---> 
-  // let paths = posts.map(post => {
-  //   return `/post/${post._id}`
-  // })
-
   return {
     paths: [],
     fallback: true,
-  }
-
-
-  // * :::::another wayo of passing the paths::::
-  // const paths = posts.map((post) => ({
-  //   params: {
-  //     postId: post._id.toString(),
-  //   },
-  // }));
-
-  // return {
-  //   paths,
-  //   fallback: false,
-  // };
+  };
 }
 
 export async function getStaticProps({ params }) {
@@ -44,7 +26,7 @@ export async function getStaticProps({ params }) {
     .collection("blogs")
     .findOne({ _id: new BSON.ObjectId(postId) });
 
-  const data = await JSON.parse(JSON.stringify(post))
+  const data = await JSON.parse(JSON.stringify(post));
 
   return {
     revalidate: 1,

@@ -4,6 +4,7 @@ import {
   Form,
   FormContainer,
 } from "../../styles/globalstyles";
+import { Button } from "../elements/Button";
 
 function Newsletter() {
   return (
@@ -12,7 +13,7 @@ function Newsletter() {
         <h3>Sign up to our Newsletter</h3>
         <Form>
           <input placeholder="your email" />
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </Form>
       </FormContainer>
     </NewsletterContainer>

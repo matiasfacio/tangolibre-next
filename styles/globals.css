@@ -1,6 +1,7 @@
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 62.5%;
   overflow-x: hidden;
   background-color: #232323;
@@ -11,6 +12,7 @@ html {
   --background-body-color: HSL(0, 0%, 18%);
   --menu-fonts-color: #ff8638;
   --rosa: #f25872;
+  --darker-gray: #232324;
 }
 
 a {
@@ -24,7 +26,7 @@ a {
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -48,7 +50,13 @@ h3 {
 }
 
 button {
-  background: -webkit-gradient(linear, left top, right top, from(var(--menu-fonts-color)), to(var(--rosa)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--menu-fonts-color)),
+    to(var(--rosa))
+  );
   background: linear-gradient(to right, var(--menu-fonts-color), var(--rosa));
   padding: 10px 20px;
   color: white;
