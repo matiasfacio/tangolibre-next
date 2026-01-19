@@ -23,6 +23,7 @@
     "postcss": "^8.2.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-is": "^19.2.3",
     "react-player": "^2.9.0",
     "saslprep": "^1.0.3",
     "styled-components": "^5.2.3",
